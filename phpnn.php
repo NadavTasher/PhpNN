@@ -24,35 +24,6 @@ function nodes($amount)
 {
     global $truncate;
     $truncate = $amount;
-
-}
-
-function train($seconds, $output = false)
-{
-    global $files;
-    if ($output)
-        echo "Starting Training, Length: " . ($seconds) . "s\n";
-
-    $end_time = time() + $seconds;
-    $fileIndex = 0;
-    while (time() < $end_time && $fileIndex < sizeof($files)) {
-        $content = file_get_contents($files[$fileIndex]);
-        scan_recursively($content);
-        $fileIndex++;
-        reorder_nodes();
-    }
-    if ($output)
-        echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
-}
-
-function generate($length = 20)
-{
-    global $dataset;
-
-    if ($length > 0) {
-        return random() . generate($length - 1);
-    }
-    return "";
 }
 
 function load($name)

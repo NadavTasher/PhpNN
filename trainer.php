@@ -1,4 +1,23 @@
 <?php
+
+function train($seconds, $output = false)
+{
+    global $files;
+    if ($output)
+        echo "Starting Training, Length: " . ($seconds) . "s\n";
+
+    $end_time = time() + $seconds;
+    $fileIndex = 0;
+    while (time() < $end_time && $fileIndex < sizeof($files)) {
+        $content = file_get_contents($files[$fileIndex]);
+        scan_recursively($content);
+        $fileIndex++;
+        reorder_nodes();
+    }
+    if ($output)
+        echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
+}
+
 function reorder_nodes()
 {
     global $dataset;
@@ -20,9 +39,9 @@ function add_node($node)
 {
     global $dataset;
     $found = false;
-    for ($n = 0; $n < sizeof($dataset->nodes) && !$found; $n++) {
-        if ($dataset->nodes[$n]->value === $node) {
-            $dataset->nodes[$n]->frequency++;
+    foreach ($dataset->nodes as $node) {
+        if ($node->value === $node) {
+            $node->frequency++;
             $found = true;
         }
     }
@@ -100,7 +119,7 @@ function scan_recursively($content)
         add_link($current, scan_recursively(substr($content, 1)));
         return $current;
     }
-    return '';
+    return "";
 }
 
 function reset_frequency()
