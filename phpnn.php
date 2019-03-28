@@ -1,6 +1,7 @@
 <?php
 include "trainer.php";
 include "generator.php";
+
 $files = array();
 $truncate = 10;
 $dataset = new stdClass();
@@ -10,6 +11,13 @@ function shove($file)
 {
     global $files;
     array_push($files, $file);
+}
+
+function shoves($directory)
+{
+    foreach (scandir($directory) as $file) {
+        shove($directory . DIRECTORY_SEPARATOR . $file);
+    }
 }
 
 function nodes($amount)
@@ -28,10 +36,10 @@ function train($seconds, $output = false)
     $end_time = time() + $seconds;
     $fileIndex = 0;
     while (time() < $end_time && $fileIndex < sizeof($files)) {
-        reorder_nodes();
         $content = file_get_contents($files[$fileIndex]);
         scan_recursively($content);
         $fileIndex++;
+        reorder_nodes();
     }
     if ($output)
         echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
@@ -50,17 +58,17 @@ function generate($length = 20)
 function load($name)
 {
     global $dataset;
-    if (file_exists(get_dataset_path($name)))
-        $dataset = json_decode(file_get_contents(get_dataset_path($name)));
+    if (file_exists(dataset($name)))
+        $dataset = json_decode(file_get_contents(dataset($name)));
 }
 
 function save($name)
 {
     global $dataset;
-    file_put_contents(get_dataset_path($name), json_encode($dataset));
+    file_put_contents(dataset($name), json_encode($dataset));
 }
 
-function get_dataset_path($name)
+function dataset($name)
 {
     return "datasets/" . $name . ".json";
 }

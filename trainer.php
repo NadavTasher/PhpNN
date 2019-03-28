@@ -16,21 +16,19 @@ function reorder_nodes()
     if ($modifications != 0) reorder_nodes();
 }
 
-function add_node($node, $next)
+function add_node($node)
 {
     global $dataset;
     $found = false;
     for ($n = 0; $n < sizeof($dataset->nodes) && !$found; $n++) {
         if ($dataset->nodes[$n]->value === $node) {
+            $dataset->nodes[$n]->frequency++;
             $found = true;
         }
     }
     if (!$found) {
         array_push($dataset->nodes, create_node($node));
-    } else {
-        $dataset->nodes[$n]->frequency++;
     }
-    add_link($node, $next);
 }
 
 function create_node($value)
@@ -98,7 +96,8 @@ function scan_recursively($content)
 {
     if (strlen($content) > 0) {
         $current = $content[0];
-        add_node($current, scan_recursively(substr($content, 1)));
+        add_node($current);
+        add_link($current, scan_recursively(substr($content, 1)));
         return $current;
     }
     return '';
