@@ -7,4 +7,4 @@ train(10, true);
 save("trained");
 
 echo "\n\nResult:\n\n";
-echo generate(100);
+echo generate(100,"<");
