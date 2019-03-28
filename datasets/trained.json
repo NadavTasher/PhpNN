@@ -1,592 +1,1052 @@
 {
   "nodes": [
     {
-      "value": " ",
-      "repetitions": 6
-    },
-    {
-      "value": "\n",
-      "repetitions": 3
-    },
-    {
-      "value": ";",
-      "repetitions": 3
-    },
-    {
-      "value": "o",
-      "repetitions": 3
-    },
-    {
-      "value": "h",
-      "repetitions": 3
-    },
-    {
-      "value": "i",
-      "repetitions": 3
-    },
-    {
-      "value": "$i",
-      "repetitions": 3
-    },
-    {
-      "value": "$",
-      "repetitions": 3
-    },
-    {
-      "value": "\"",
-      "repetitions": 2
-    },
-    {
-      "value": "l",
-      "repetitions": 2
-    },
-    {
-      "value": "e",
-      "repetitions": 2
-    },
-    {
-      "value": "  ",
-      "repetitions": 2
-    },
-    {
-      "value": "+",
-      "repetitions": 2
-    },
-    {
-      "value": ";$i",
-      "repetitions": 2
-    },
-    {
-      "value": ";$",
-      "repetitions": 2
-    },
-    {
-      "value": "0;$",
-      "repetitions": 2
-    },
-    {
-      "value": "0;",
-      "repetitions": 2
-    },
-    {
-      "value": "0",
-      "repetitions": 2
-    },
-    {
-      "value": "<",
-      "repetitions": 2
-    },
-    {
-      "value": "p",
-      "repetitions": 2
-    },
-    {
       "value": "",
-      "repetitions": 2
-    },
-    {
-      "value": "}",
-      "repetitions": 1
-    },
-    {
-      "value": "\n}",
-      "repetitions": 1
-    },
-    {
-      "value": ";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": ";\n",
-      "repetitions": 1
-    },
-    {
-      "value": "\";\n",
-      "repetitions": 1
-    },
-    {
-      "value": "\";",
-      "repetitions": 1
-    },
-    {
-      "value": "o\";",
-      "repetitions": 1
-    },
-    {
-      "value": "o\"",
-      "repetitions": 1
-    },
-    {
-      "value": "lo\"",
-      "repetitions": 1
-    },
-    {
-      "value": "lo",
-      "repetitions": 1
-    },
-    {
-      "value": "llo",
-      "repetitions": 1
-    },
-    {
-      "value": "ll",
-      "repetitions": 1
-    },
-    {
-      "value": "ell",
-      "repetitions": 1
-    },
-    {
-      "value": "el",
-      "repetitions": 1
-    },
-    {
-      "value": "hel",
-      "repetitions": 1
-    },
-    {
-      "value": "he",
-      "repetitions": 1
-    },
-    {
-      "value": "\"he",
-      "repetitions": 1
-    },
-    {
-      "value": "\"h",
-      "repetitions": 1
-    },
-    {
-      "value": " \"h",
-      "repetitions": 1
-    },
-    {
-      "value": " \"",
-      "repetitions": 1
-    },
-    {
-      "value": "o \"",
-      "repetitions": 1
-    },
-    {
-      "value": "o ",
-      "repetitions": 1
-    },
-    {
-      "value": "ho ",
-      "repetitions": 1
-    },
-    {
-      "value": "ho",
-      "repetitions": 1
-    },
-    {
-      "value": "cho",
-      "repetitions": 1
-    },
-    {
-      "value": "ch",
-      "repetitions": 1
-    },
-    {
-      "value": "c",
-      "repetitions": 1
-    },
-    {
-      "value": "ech",
-      "repetitions": 1
-    },
-    {
-      "value": "ec",
-      "repetitions": 1
-    },
-    {
-      "value": " ec",
-      "repetitions": 1
-    },
-    {
-      "value": " e",
-      "repetitions": 1
-    },
-    {
-      "value": "  e",
-      "repetitions": 1
-    },
-    {
-      "value": "   ",
-      "repetitions": 1
-    },
-    {
-      "value": "\n  ",
-      "repetitions": 1
-    },
-    {
-      "value": "\n ",
-      "repetitions": 1
-    },
-    {
-      "value": "{\n ",
-      "repetitions": 1
-    },
-    {
-      "value": "{\n",
-      "repetitions": 1
-    },
-    {
-      "value": "{",
-      "repetitions": 1
-    },
-    {
-      "value": " {\n",
-      "repetitions": 1
-    },
-    {
-      "value": " {",
-      "repetitions": 1
-    },
-    {
-      "value": ") {",
-      "repetitions": 1
-    },
-    {
-      "value": ") ",
-      "repetitions": 1
-    },
-    {
-      "value": ")",
-      "repetitions": 1
-    },
-    {
-      "value": "+) ",
-      "repetitions": 1
-    },
-    {
-      "value": "+)",
-      "repetitions": 1
-    },
-    {
-      "value": "++)",
-      "repetitions": 1
-    },
-    {
-      "value": "++",
-      "repetitions": 1
-    },
-    {
-      "value": "i++",
-      "repetitions": 1
-    },
-    {
-      "value": "i+",
-      "repetitions": 1
-    },
-    {
-      "value": "$i+",
-      "repetitions": 1
-    },
-    {
-      "value": "10;",
-      "repetitions": 1
-    },
-    {
-      "value": "10",
-      "repetitions": 1
-    },
-    {
-      "value": "1",
-      "repetitions": 1
-    },
-    {
-      "value": "<10",
-      "repetitions": 1
-    },
-    {
-      "value": "<1",
-      "repetitions": 1
-    },
-    {
-      "value": "i<1",
-      "repetitions": 1
-    },
-    {
-      "value": "i<",
-      "repetitions": 1
-    },
-    {
-      "value": "$i<",
-      "repetitions": 1
-    },
-    {
-      "value": "=0;",
-      "repetitions": 1
-    },
-    {
-      "value": "=0",
-      "repetitions": 1
-    },
-    {
-      "value": "=",
-      "repetitions": 1
-    },
-    {
-      "value": "i=0",
-      "repetitions": 1
-    },
-    {
-      "value": "i=",
-      "repetitions": 1
-    },
-    {
-      "value": "$i=",
-      "repetitions": 1
-    },
-    {
-      "value": "($i",
-      "repetitions": 1
-    },
-    {
-      "value": "($",
-      "repetitions": 1
-    },
-    {
-      "value": "(",
-      "repetitions": 1
-    },
-    {
-      "value": "r($",
-      "repetitions": 1
-    },
-    {
-      "value": "r(",
-      "repetitions": 1
-    },
-    {
-      "value": "r",
-      "repetitions": 1
-    },
-    {
-      "value": "or(",
-      "repetitions": 1
-    },
-    {
-      "value": "or",
-      "repetitions": 1
-    },
-    {
-      "value": "for",
-      "repetitions": 1
-    },
-    {
-      "value": "fo",
-      "repetitions": 1
-    },
-    {
-      "value": "f",
-      "repetitions": 1
-    },
-    {
-      "value": "\nfo",
-      "repetitions": 1
-    },
-    {
-      "value": "\nf",
-      "repetitions": 1
-    },
-    {
-      "value": "p\nf",
-      "repetitions": 1
-    },
-    {
-      "value": "p\n",
-      "repetitions": 1
-    },
-    {
-      "value": "hp\n",
-      "repetitions": 1
-    },
-    {
-      "value": "hp",
-      "repetitions": 1
-    },
-    {
-      "value": "php",
-      "repetitions": 1
-    },
-    {
-      "value": "ph",
-      "repetitions": 1
-    },
-    {
-      "value": "?ph",
-      "repetitions": 1
-    },
-    {
-      "value": "?p",
-      "repetitions": 1
-    },
-    {
-      "value": "?",
-      "repetitions": 1
-    },
-    {
-      "value": "<?p",
-      "repetitions": 1
-    },
-    {
-      "value": "<?",
-      "repetitions": 1
-    },
-    {
-      "value": "\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "<?php\n",
-      "repetitions": 1
-    },
-    {
-      "value": "+) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "llo\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "o\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "i++) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "\"hello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "hello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "ello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "10;$i++) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "0;$i++) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "lo\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": ";$i++) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "$i++) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "++) {\n",
-      "repetitions": 1
-    },
-    {
-      "value": "+) {\n    echo \"hello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": ") {\n    echo \"hello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": " {\n    echo \"hello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "{\n    echo \"hello\";\n}",
-      "repetitions": 1
-    },
-    {
-      "value": "\n    echo \"hello\";\n}",
-      "repetitions": 1
+      "repetitions": 137
     },
     {
       "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
-      "repetitions": 1
+      "repetitions": 41
+    },
+    {
+      "value": "    echo \"hello\";\n}",
+      "repetitions": 12
+    },
+    {
+      "value": ";$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 8
+    },
+    {
+      "value": "0;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 8
+    },
+    {
+      "value": "\n}",
+      "repetitions": 7
+    },
+    {
+      "value": ";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": " ",
+      "repetitions": 7
+    },
+    {
+      "value": "<",
+      "repetitions": 7
+    },
+    {
+      "value": "\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\n",
+      "repetitions": 7
+    },
+    {
+      "value": "o\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "ello\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "\n    echo \"hello\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($",
+      "repetitions": 7
+    },
+    {
+      "value": "i++) {\n    echo \"hello\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    ",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    e",
+      "repetitions": 7
+    },
+    {
+      "value": "ho \"hello\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfo",
+      "repetitions": 7
+    },
+    {
+      "value": "$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0;$i",
+      "repetitions": 7
+    },
+    {
+      "value": "<?php\nfor($i=0;$",
+      "repetitions": 7
+    },
+    {
+      "value": "}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?p",
+      "repetitions": 6
+    },
+    {
+      "value": "<?",
+      "repetitions": 6
+    },
+    {
+      "value": "llo\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "\"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": ") {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": " {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++)",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo ",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"he",
+      "repetitions": 6
+    },
+    {
+      "value": "\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) ",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i+",
+      "repetitions": 6
+    },
+    {
+      "value": "<?ph",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nf",
+      "repetitions": 6
+    },
+    {
+      "value": "++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor(",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=",
+      "repetitions": 6
+    },
+    {
+      "value": "10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$",
+      "repetitions": 6
+    },
+    {
+      "value": "0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor",
+      "repetitions": 6
+    },
+    {
+      "value": "$i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "or($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo",
+      "repetitions": 6
+    },
+    {
+      "value": " \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "o \"hello\";\n}",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;",
+      "repetitions": 6
+    },
+    {
+      "value": "<?php\nfor($i=0;",
+      "repetitions": 6
+    },
+    {
+      "value": "h",
+      "repetitions": 5
+    },
+    {
+      "value": "hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "lo\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "+) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "{\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hello",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hell",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hel",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"h",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {",
+      "repetitions": 5
+    },
+    {
+      "value": "for($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "p\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    ech",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    ec",
+      "repetitions": 5
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n   ",
+      "repetitions": 5
+    },
+    {
+      "value": "cho \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": ";$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "r($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "   echo \"hello\";\n}",
+      "repetitions": 5
+    },
+    {
+      "value": "\n",
+      "repetitions": 4
+    },
+    {
+      "value": ";",
+      "repetitions": 4
+    },
+    {
+      "value": "o",
+      "repetitions": 4
+    },
+    {
+      "value": "i",
+      "repetitions": 4
+    },
+    {
+      "value": "$i",
+      "repetitions": 4
+    },
+    {
+      "value": "$",
+      "repetitions": 4
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hello\"",
+      "repetitions": 4
+    },
+    {
+      "value": "hp\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "php\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n  ",
+      "repetitions": 4
+    },
+    {
+      "value": " echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "  echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "=0;$i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<1",
+      "repetitions": 4
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10",
+      "repetitions": 4
+    },
+    {
+      "value": "<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "i<10;$i++) {\n    echo \"hello\";\n}",
+      "repetitions": 4
+    },
+    {
+      "value": "\"",
+      "repetitions": 3
+    },
+    {
+      "value": "l",
+      "repetitions": 3
+    },
+    {
+      "value": "e",
+      "repetitions": 3
+    },
+    {
+      "value": "o \"",
+      "repetitions": 3
+    },
+    {
+      "value": "  ",
+      "repetitions": 3
+    },
+    {
+      "value": "{\n",
+      "repetitions": 3
+    },
+    {
+      "value": "+",
+      "repetitions": 3
+    },
+    {
+      "value": ";$i",
+      "repetitions": 3
+    },
+    {
+      "value": ";$",
+      "repetitions": 3
+    },
+    {
+      "value": "0;$",
+      "repetitions": 3
+    },
+    {
+      "value": "0;",
+      "repetitions": 3
+    },
+    {
+      "value": "0",
+      "repetitions": 3
+    },
+    {
+      "value": "<10",
+      "repetitions": 3
+    },
+    {
+      "value": "i<1",
+      "repetitions": 3
+    },
+    {
+      "value": "=0;",
+      "repetitions": 3
+    },
+    {
+      "value": "p",
+      "repetitions": 3
+    },
+    {
+      "value": "echo",
+      "repetitions": 3
+    },
+    {
+      "value": "for($i=0;$i<10;$i++) {",
+      "repetitions": 3
+    },
+    {
+      "value": "    echo \"hello\";",
+      "repetitions": 3
+    },
+    {
+      "value": "$i<10",
+      "repetitions": 3
+    },
+    {
+      "value": "$i++) {\n    echo \"hello\"",
+      "repetitions": 3
+    },
+    {
+      "value": "r($i=0;$i<10;$i++) {\n    ech",
+      "repetitions": 3
+    },
+    {
+      "value": " \"hell",
+      "repetitions": 3
+    },
+    {
+      "value": "p\nfor($i=0;$i<10;$i++) {\n    ec",
+      "repetitions": 3
+    },
+    {
+      "value": "=0;$",
+      "repetitions": 3
+    },
+    {
+      "value": "<10;$",
+      "repetitions": 3
+    },
+    {
+      "value": "<10;",
+      "repetitions": 3
+    },
+    {
+      "value": "i=0;",
+      "repetitions": 3
+    },
+    {
+      "value": "i<10;",
+      "repetitions": 3
+    },
+    {
+      "value": "hello",
+      "repetitions": 3
+    },
+    {
+      "value": "cho \"h",
+      "repetitions": 3
+    },
+    {
+      "value": "i<10",
+      "repetitions": 3
+    },
+    {
+      "value": "$i<1",
+      "repetitions": 3
+    },
+    {
+      "value": ";$i<1",
+      "repetitions": 3
+    },
+    {
+      "value": "?php\nfor($i=0;$i",
+      "repetitions": 3
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";\n",
+      "repetitions": 3
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n    echo \"hello\";",
+      "repetitions": 3
+    },
+    {
+      "value": "<?php\nfor($i=0;$i<10;$i++) {\n ",
+      "repetitions": 3
+    },
+    {
+      "value": ";\n",
+      "repetitions": 2
+    },
+    {
+      "value": "\";\n",
+      "repetitions": 2
+    },
+    {
+      "value": "\";",
+      "repetitions": 2
+    },
+    {
+      "value": "o\";",
+      "repetitions": 2
+    },
+    {
+      "value": "o\"",
+      "repetitions": 2
+    },
+    {
+      "value": "lo\"",
+      "repetitions": 2
+    },
+    {
+      "value": "lo",
+      "repetitions": 2
+    },
+    {
+      "value": "llo",
+      "repetitions": 2
+    },
+    {
+      "value": "ll",
+      "repetitions": 2
+    },
+    {
+      "value": "ell",
+      "repetitions": 2
+    },
+    {
+      "value": "el",
+      "repetitions": 2
+    },
+    {
+      "value": "hel",
+      "repetitions": 2
+    },
+    {
+      "value": "he",
+      "repetitions": 2
+    },
+    {
+      "value": "\"he",
+      "repetitions": 2
+    },
+    {
+      "value": "\"h",
+      "repetitions": 2
+    },
+    {
+      "value": " \"h",
+      "repetitions": 2
+    },
+    {
+      "value": " \"",
+      "repetitions": 2
+    },
+    {
+      "value": "o ",
+      "repetitions": 2
+    },
+    {
+      "value": "ho ",
+      "repetitions": 2
+    },
+    {
+      "value": "ho",
+      "repetitions": 2
+    },
+    {
+      "value": "cho",
+      "repetitions": 2
+    },
+    {
+      "value": "ch",
+      "repetitions": 2
+    },
+    {
+      "value": "c",
+      "repetitions": 2
+    },
+    {
+      "value": "ech",
+      "repetitions": 2
+    },
+    {
+      "value": "ec",
+      "repetitions": 2
+    },
+    {
+      "value": " ec",
+      "repetitions": 2
+    },
+    {
+      "value": " e",
+      "repetitions": 2
+    },
+    {
+      "value": "  e",
+      "repetitions": 2
+    },
+    {
+      "value": "   ",
+      "repetitions": 2
+    },
+    {
+      "value": "\n  ",
+      "repetitions": 2
+    },
+    {
+      "value": "\n ",
+      "repetitions": 2
+    },
+    {
+      "value": "{\n ",
+      "repetitions": 2
+    },
+    {
+      "value": "{",
+      "repetitions": 2
+    },
+    {
+      "value": " {\n",
+      "repetitions": 2
+    },
+    {
+      "value": " {",
+      "repetitions": 2
+    },
+    {
+      "value": ") {",
+      "repetitions": 2
+    },
+    {
+      "value": ") ",
+      "repetitions": 2
+    },
+    {
+      "value": ")",
+      "repetitions": 2
+    },
+    {
+      "value": "+) ",
+      "repetitions": 2
+    },
+    {
+      "value": "+)",
+      "repetitions": 2
+    },
+    {
+      "value": "++)",
+      "repetitions": 2
+    },
+    {
+      "value": "++",
+      "repetitions": 2
+    },
+    {
+      "value": "i++",
+      "repetitions": 2
+    },
+    {
+      "value": "i+",
+      "repetitions": 2
+    },
+    {
+      "value": "$i+",
+      "repetitions": 2
+    },
+    {
+      "value": "10;",
+      "repetitions": 2
+    },
+    {
+      "value": "10",
+      "repetitions": 2
+    },
+    {
+      "value": "1",
+      "repetitions": 2
+    },
+    {
+      "value": "<1",
+      "repetitions": 2
+    },
+    {
+      "value": "i<",
+      "repetitions": 2
+    },
+    {
+      "value": "$i<",
+      "repetitions": 2
+    },
+    {
+      "value": "=0",
+      "repetitions": 2
+    },
+    {
+      "value": "=",
+      "repetitions": 2
+    },
+    {
+      "value": "i=0",
+      "repetitions": 2
+    },
+    {
+      "value": "i=",
+      "repetitions": 2
+    },
+    {
+      "value": "$i=",
+      "repetitions": 2
+    },
+    {
+      "value": "($i",
+      "repetitions": 2
+    },
+    {
+      "value": "($",
+      "repetitions": 2
+    },
+    {
+      "value": "(",
+      "repetitions": 2
+    },
+    {
+      "value": "r($",
+      "repetitions": 2
+    },
+    {
+      "value": "r(",
+      "repetitions": 2
+    },
+    {
+      "value": "r",
+      "repetitions": 2
+    },
+    {
+      "value": "or(",
+      "repetitions": 2
+    },
+    {
+      "value": "or",
+      "repetitions": 2
+    },
+    {
+      "value": "for",
+      "repetitions": 2
+    },
+    {
+      "value": "fo",
+      "repetitions": 2
+    },
+    {
+      "value": "f",
+      "repetitions": 2
+    },
+    {
+      "value": "\nfo",
+      "repetitions": 2
+    },
+    {
+      "value": "\nf",
+      "repetitions": 2
+    },
+    {
+      "value": "p\nf",
+      "repetitions": 2
+    },
+    {
+      "value": "p\n",
+      "repetitions": 2
+    },
+    {
+      "value": "hp\n",
+      "repetitions": 2
+    },
+    {
+      "value": "hp",
+      "repetitions": 2
+    },
+    {
+      "value": "php",
+      "repetitions": 2
+    },
+    {
+      "value": "ph",
+      "repetitions": 2
+    },
+    {
+      "value": "?ph",
+      "repetitions": 2
+    },
+    {
+      "value": "?p",
+      "repetitions": 2
+    },
+    {
+      "value": "?",
+      "repetitions": 2
+    },
+    {
+      "value": "+) {\n",
+      "repetitions": 2
+    },
+    {
+      "value": "i++) {\n",
+      "repetitions": 2
+    },
+    {
+      "value": "10;$i++) {\n",
+      "repetitions": 2
+    },
+    {
+      "value": "0;$i++) {\n",
+      "repetitions": 2
+    },
+    {
+      "value": ";$i++) {\n",
+      "repetitions": 2
+    },
+    {
+      "value": "$i++) {\n",
+      "repetitions": 2
+    },
+    {
+      "value": "++) {\n",
+      "repetitions": 2
     },
     {
       "value": "n\";",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "fun\";",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "un\";",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "<?php\necho \"fun\";",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "u",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "n",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "fu",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "n\"",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "fun",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "\ne",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "\"f",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "un",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "p\ne",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": " \"f",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "un\"",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "\nec",
-      "repetitions": 0
+      "repetitions": 1
     },
     {
       "value": "\"fu",
-      "repetitions": 0
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho",
+      "repetitions": 1
+    },
+    {
+      "value": "\"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "echo \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho \"fun\"",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\nech",
+      "repetitions": 1
+    },
+    {
+      "value": " \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "p\nec",
+      "repetitions": 1
+    },
+    {
+      "value": "o \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho ",
+      "repetitions": 1
+    },
+    {
+      "value": "cho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "?php\necho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "\necho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho \"fun",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\nec",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\ne",
+      "repetitions": 1
+    },
+    {
+      "value": "ho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho \"",
+      "repetitions": 1
+    },
+    {
+      "value": "p\necho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "hp\necho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "php\necho \"fun\";",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho \"fu",
+      "repetitions": 1
+    },
+    {
+      "value": "<?php\necho \"f",
+      "repetitions": 1
     }
   ]
 }

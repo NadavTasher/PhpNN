@@ -76,7 +76,7 @@ function train($seconds, $output = false)
         $content = file_get_contents($file);
         for ($n = 0; $n < sizeof($dataset->nodes); $n++) {
             if (strlen($dataset->nodes[$n]->value) > 0)
-                $dataset->nodes[$n]->repetitions = (strlen($content) - strlen(str_replace($dataset->nodes[$n]->value, "", $content))) / strlen($dataset->nodes[$n]->value);
+                $dataset->nodes[$n]->repetitions = sizeof(explode($dataset->nodes[$n]->value, $content));
         }
     }
 
@@ -84,13 +84,15 @@ function train($seconds, $output = false)
     {
         global $dataset;
         $content = file_get_contents($file);
-        for ($n = 0; $n < sizeof($dataset->nodes); $n++) {
-            $split=explode($dataset->nodes->value,$content);
-            if(sizeof($split)>0){
-                
+        foreach ($dataset->nodes as $node) {
+            if (strlen($node->value) > 0) {
+                $split = explode($node->value, $content);
+                if (sizeof($split) > 0) {
+                    foreach ($split as $splat) {
+                        add($splat);
+                    }
+                }
             }
-            if (strlen($dataset->nodes[$n]->value) > 0)
-                $dataset->nodes[$n]->repetitions = (strlen($content) - strlen(str_replace($dataset->nodes[$n]->value, "", $content))) / strlen($dataset->nodes[$n]->value);
         }
     }
 
@@ -126,7 +128,6 @@ function train($seconds, $output = false)
             scan_node_split($file);
             add_nodes($size, $offset, $file);
         }
-        if ($output) echo generate();
         if ($size > average($files)) {
             $size = 1;
             $offset++;
@@ -138,9 +139,31 @@ function train($seconds, $output = false)
         echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
 }
 
-function generate()
+function random()
 {
-    global $nodes;
+    global $dataset;
+    $sum = 0;
+    foreach ($dataset->nodes as $node) {
+        $sum += $node->repetitions;
+    }
+    $random = rand(0, $sum);
+    $count = 0;
+    foreach ($dataset->nodes as $node) {
+        if ($random > $count && $random <= $count + $node->repetitions)
+            return $node->value;
+        else
+            $count += $node->repetitions;
+    }
+    return "";
+}
+
+function generate($length=20)
+{
+    global $dataset;
+
+    if ($length > 0) {
+        return random() . generate($length - 1);
+    }
     return "";
 }
 
