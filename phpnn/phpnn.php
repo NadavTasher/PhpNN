@@ -3,7 +3,6 @@ include "trainer.php";
 include "generator.php";
 
 $files = array();
-$truncate = 10;
 $dataset = new stdClass();
 $dataset->nodes = array();
 
@@ -18,12 +17,6 @@ function shoves($directory)
     foreach (scandir($directory) as $file) {
         shove($directory . DIRECTORY_SEPARATOR . $file);
     }
-}
-
-function nodes($amount)
-{
-    global $truncate;
-    $truncate = $amount;
 }
 
 function load($name)

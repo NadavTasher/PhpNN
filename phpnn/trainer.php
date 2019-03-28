@@ -39,9 +39,9 @@ function add_node($node)
 {
     global $dataset;
     $found = false;
-    foreach ($dataset->nodes as $node) {
-        if ($node->value === $node) {
-            $node->frequency++;
+    foreach ($dataset->nodes as $n) {
+        if ($n->value === $node) {
+            $n->frequency++;
             $found = true;
         }
     }
@@ -116,7 +116,9 @@ function scan_recursively($content)
     if (strlen($content) > 0) {
         $current = $content[0];
         add_node($current);
-        add_link($current, scan_recursively(substr($content, 1)));
+        $next = scan_recursively(substr($content, 1));
+        if (!empty($next))
+            add_link($current, $next);
         return $current;
     }
     return "";

@@ -1,10 +1,10 @@
 <?php
-include "phpnn.php";
-load("trained");
-nodes(10);
-shoves("examples");
+include "phpnn/phpnn.php";
+load("lyrics");
+//shoves("examples/training2");
+shove("examples/training2/1.txt");
 train(10, true);
-save("trained");
+save("lyrics");
 
 echo "\n\nResult:\n\n";
-echo generate(100,"<");
+echo generate(10000,"u", true);
