@@ -28,10 +28,10 @@ function suggest_node($starter, $strengthCare = false)
     return "";
 }
 
-function generate($length = 20, $starter = "", $strengthCare = false)
+function generate($sequences = 20, $starter = "", $strengthCare = false)
 {
-    if ($length > 0) {
-        return $starter . generate($length - 1, suggest_node($starter, $strengthCare));
+    if ($sequences > 0) {
+        return $starter . generate($sequences - 1, suggest_node($starter, $strengthCare));
     }
     return "";
 }

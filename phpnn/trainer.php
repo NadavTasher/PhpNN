@@ -14,13 +14,13 @@ function train($seconds, $output = false)
         $content = file_get_contents($files[$fileIndex]);
         scan_recursively($content);
         $fileIndex++;
-        reorder_nodes();
+        sort_nodes();
     }
     if ($output)
         echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
 }
 
-function reorder_nodes()
+function sort_nodes()
 {
     global $dataset;
     $modifications = 0;
@@ -34,7 +34,7 @@ function reorder_nodes()
             $modifications++;
         }
     }
-    if ($modifications != 0) reorder_nodes();
+    if ($modifications != 0) sort_nodes();
 }
 
 function add_node($node)
@@ -63,10 +63,19 @@ function create_node($value)
 
 function add_link($node, $link)
 {
-    if (!has_link($node, $link)) {
-        set_link($node, $link);
-    } else {
-        strengthen_link($node, $link);
+    foreach (nodes() as $n) {
+        if ($n->value === $node) {
+            $found = false;
+            foreach ($n->links as $l) {
+                if ($l->value === $link) {
+                    $l->strength++;
+                    $found = true;
+                }
+            }
+            if (!$found) {
+                array_push($n->links, create_link($link));
+            }
+        }
     }
 }
 
@@ -76,41 +85,6 @@ function create_link($next)
     $link->value = $next;
     $link->strength = 1;
     return $link;
-}
-
-function has_link($node, $link)
-{
-    global $dataset;
-    foreach ($dataset->nodes as $n) {
-        if ($n->value === $node) {
-            foreach ($n->links as $l) {
-                if ($l->value === $link) return true;
-            }
-        }
-    }
-    return false;
-}
-
-function strengthen_link($node, $link)
-{
-    global $dataset;
-    foreach ($dataset->nodes as $n) {
-        if ($n->value === $node) {
-            foreach ($n->links as $l) {
-                if ($l->value === $link) $l->strength++;
-            }
-        }
-    }
-}
-
-function set_link($node, $link)
-{
-    global $dataset;
-    foreach ($dataset->nodes as $n) {
-        if ($n->value === $node) {
-            array_push($n->links, create_link($link));
-        }
-    }
 }
 
 function scan_recursively($content)

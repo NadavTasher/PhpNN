@@ -6,6 +6,11 @@ $files = array();
 $dataset = new stdClass();
 $dataset->nodes = array();
 
+function nodes(){
+    global $dataset;
+    return $dataset->nodes;
+}
+
 function shove($file)
 {
     global $files;
@@ -30,6 +35,11 @@ function load($name)
     global $dataset;
     if (file_exists(dataset($name)))
         $dataset = json_decode(file_get_contents(dataset($name)));
+}
+
+function frequent(){
+    sort_nodes();
+    return nodes()[0];
 }
 
 function save($name)
