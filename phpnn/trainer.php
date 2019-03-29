@@ -1,5 +1,7 @@
 <?php
 
+$chunkLength = 1;
+
 function train($seconds, $output = false)
 {
     global $files;
@@ -113,10 +115,11 @@ function set_link($node, $link)
 
 function scan_recursively($content)
 {
+    global $chunkLength;
     if (strlen($content) > 0) {
-        $current = $content[0];
+        $current = substr($content, 0, $chunkLength);
         add_node($current);
-        $next = scan_recursively(substr($content, 1));
+        $next = scan_recursively(substr($content, $chunkLength));
         if (!empty($next))
             add_link($current, $next);
         return $current;

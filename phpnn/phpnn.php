@@ -19,6 +19,12 @@ function shoves($directory)
     }
 }
 
+function chunk($length)
+{
+    global $chunkLength;
+    $chunkLength = $length;
+}
+
 function load($name)
 {
     global $dataset;
