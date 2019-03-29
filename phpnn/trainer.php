@@ -2,41 +2,6 @@
 
 $chunkLength = 1;
 
-function train($seconds, $output = false)
-{
-    global $files;
-    if ($output)
-        echo "Starting Training, Length: " . ($seconds) . "s\n";
-
-    $end_time = time() + $seconds;
-    $fileIndex = 0;
-    while (time() < $end_time && $fileIndex < sizeof($files)) {
-        $content = file_get_contents($files[$fileIndex]);
-        scan_recursively($content);
-        $fileIndex++;
-        sort_nodes();
-    }
-    if ($output)
-        echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
-}
-
-function sort_nodes()
-{
-    global $dataset;
-    $modifications = 0;
-    for ($n = 1; $n < sizeof($dataset->nodes); $n++) {
-        $previous = $dataset->nodes[$n - 1];
-        $current = $dataset->nodes[$n];
-        if ($current->frequency > $previous->frequency) {
-            $temporary = $previous;
-            $dataset->nodes[$n - 1] = $current;
-            $dataset->nodes[$n] = $temporary;
-            $modifications++;
-        }
-    }
-    if ($modifications != 0) sort_nodes();
-}
-
 function add_node($node)
 {
     global $dataset;
@@ -50,15 +15,6 @@ function add_node($node)
     if (!$found) {
         array_push($dataset->nodes, create_node($node));
     }
-}
-
-function create_node($value)
-{
-    $node = new stdClass();
-    $node->value = $value;
-    $node->frequency = 1;
-    $node->links = array();
-    return $node;
 }
 
 function add_link($node, $link)
@@ -79,12 +35,46 @@ function add_link($node, $link)
     }
 }
 
+function create_node($value)
+{
+    $node = new stdClass();
+    $node->value = $value;
+    $node->frequency = 1;
+    $node->links = array();
+    return $node;
+}
+
 function create_link($next)
 {
     $link = new stdClass();
     $link->value = $next;
     $link->strength = 1;
     return $link;
+}
+
+function reset_frequency()
+{
+    global $dataset;
+    for ($n = 0; $n < sizeof($dataset->nodes); $n++) {
+        $dataset->nodes[$n]->frequency = 0;
+    }
+}
+
+function sort_nodes()
+{
+    global $dataset;
+    $modifications = 0;
+    for ($n = 1; $n < sizeof($dataset->nodes); $n++) {
+        $previous = $dataset->nodes[$n - 1];
+        $current = $dataset->nodes[$n];
+        if ($current->frequency > $previous->frequency) {
+            $temporary = $previous;
+            $dataset->nodes[$n - 1] = $current;
+            $dataset->nodes[$n] = $temporary;
+            $modifications++;
+        }
+    }
+    if ($modifications != 0) sort_nodes();
 }
 
 function scan_recursively($content)
@@ -101,10 +91,20 @@ function scan_recursively($content)
     return "";
 }
 
-function reset_frequency()
+function train($seconds, $output = false)
 {
-    global $dataset;
-    for ($n = 0; $n < sizeof($dataset->nodes); $n++) {
-        $dataset->nodes[$n]->frequency = 0;
+    global $files;
+    if ($output)
+        echo "Starting Training, Length: " . ($seconds) . "s\n";
+
+    $end_time = time() + $seconds;
+    $fileIndex = 0;
+    while (time() < $end_time && $fileIndex < sizeof($files)) {
+        $content = file_get_contents($files[$fileIndex]);
+        scan_recursively($content);
+        $fileIndex++;
+        sort_nodes();
     }
+    if ($output)
+        echo "Finished Training, Delay: " . (time() - $end_time) . "s\n";
 }

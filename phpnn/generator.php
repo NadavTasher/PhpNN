@@ -1,4 +1,13 @@
 <?php
+
+function generate($sequences = 20, $starter = "", $strengthCare = false)
+{
+    if ($sequences > 0) {
+        return $starter . generate($sequences - 1, suggest_node($starter, $strengthCare));
+    }
+    return "";
+}
+
 function suggest_node($starter, $strengthCare = false)
 {
     global $dataset;
@@ -24,14 +33,6 @@ function suggest_node($starter, $strengthCare = false)
     if (sizeof($suggestions) > 0) {
         shuffle($suggestions);
         return $suggestions[0];
-    }
-    return "";
-}
-
-function generate($sequences = 20, $starter = "", $strengthCare = false)
-{
-    if ($sequences > 0) {
-        return $starter . generate($sequences - 1, suggest_node($starter, $strengthCare));
     }
     return "";
 }
