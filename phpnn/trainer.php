@@ -133,11 +133,13 @@ function scan($content)
     }
 
     $previous = "";
+    add_node($previous);
     foreach ($chunks as $current) {
-        add_node($current);
-        if (!empty($previous))
+        if (!empty($current)) {
+            add_node($current);
             add_link($previous, $current);
-        $previous = $current;
+            $previous = $current;
+        }
     }
 }
 

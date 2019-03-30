@@ -1,9 +1,7 @@
 <?php
 
-function generate($sequences = 20, $starter = null, $weighted = true, $recreation_chunk = "")
+function generate($sequences = 20, $starter = "", $weighted = true, $recreation_chunk = "")
 {
-    if ($starter === null)
-        $starter = weighted();
     if ($sequences > 0) {
         return $starter . $recreation_chunk . generate($sequences - 1, suggest_node($starter, $weighted), $weighted, $recreation_chunk);
     }
