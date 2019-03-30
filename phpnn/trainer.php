@@ -129,7 +129,7 @@ function scan($content)
     if (is_string($chunk)) {
         $chunks = preg_split("/$chunk/", $content);
     } else if (is_numeric($chunk)) {
-        $chunks = explode($chunk, $content);
+        $chunks = str_split($content, $chunk);
     }
 
     $previous = "";

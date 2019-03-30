@@ -1,12 +1,12 @@
 <?php
 include "phpnn/phpnn.php";
 //ini_set('memory_limit', '1024M');
-load("words");
-//shoves("examples/training1");
+load("newphp");
+//shoves("examples/php");
 //shove("examples/training2/1.txt");
-//chunk("\n| ");
+//chunk(3);
 //train(200, true);
-//save("php_trained");
+//save("newphp");
 
 echo "\nResult:\n\n";
-echo generate(100,weighted(),true," ");
+echo generate(100,weighted(),true);
