@@ -1,27 +1,22 @@
 <?php
 
-function generate($sequences = 20, $starter = "", $strengthCare = false)
+function generate($sequences = 20, $starter = "", $weighted = false, $recreation_chunk = "")
 {
     if ($sequences > 0) {
-        return $starter . generate($sequences - 1, suggest_node($starter, $strengthCare));
+        return $starter . $recreation_chunk . generate($sequences - 1, suggest_node($starter, $weighted), $weighted, $recreation_chunk);
     }
     return "";
 }
 
-function suggest_node($starter, $strengthCare = false)
+function suggest_node($starter, $weighted = false)
 {
     global $nodes;
     $suggestions = array();
     foreach ($nodes as $node) {
         if ($node->v === $starter) {
-            $strongest = 0;
             foreach ($node->l as $link) {
-                if ($strengthCare) {
-                    if ($link->s > $strongest) {
-                        $suggestions = array();
-                        $strongest = $link->s;
-                    }
-                    if ($link->s === $strongest) {
+                if ($weighted) {
+                    for ($t=0;$t<$link->s;$t++){
                         array_push($suggestions, $link->v);
                     }
                 } else {
