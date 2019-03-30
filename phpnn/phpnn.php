@@ -42,8 +42,6 @@ function load($name)
     }
 }
 
-function json_array_encode(){}
-
 function save($name)
 {
     global $nodes;

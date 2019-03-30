@@ -53,6 +53,15 @@ function create_link($next)
     return $link;
 }
 
+function filter($input)
+{
+    $rebuilt = "";
+    foreach (str_split($input) as $char) {
+        if (!preg_match('/[^\x00-\x7f]/', $char)) $rebuilt .= $char;
+    }
+    return $rebuilt;
+}
+
 function reset_frequency()
 {
     global $nodes;
@@ -117,7 +126,7 @@ function train($seconds, $output = false)
     $end_time = time() + $seconds;
     $fileIndex = 0;
     while (time() < $end_time && $fileIndex < sizeof($files)) {
-        $content = file_get_contents($files[$fileIndex]);
+        $content = filter(file_get_contents($files[$fileIndex]));
         scan($content);
         $fileIndex++;
         sort_nodes();
