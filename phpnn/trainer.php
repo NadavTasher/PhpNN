@@ -62,6 +62,27 @@ function filter($input)
     return $rebuilt;
 }
 
+function frequent()
+{
+    global $nodes;
+    sort_nodes();
+    return $nodes[0]->v;
+}
+
+function weighted()
+{
+    global $nodes;
+    $array = array();
+    foreach ($nodes as $node) {
+        for ($f = 0; $f < $node->f; $f++) array_push($array, $node->v);
+    }
+    if (!empty($array)) {
+        shuffle($array);
+        return $array[0];
+    }
+    return "";
+}
+
 function reset_frequency()
 {
     global $nodes;

@@ -1,14 +1,16 @@
 <?php
 
-function generate($sequences = 20, $starter = "", $weighted = false, $recreation_chunk = "")
+function generate($sequences = 20, $starter = null, $weighted = true, $recreation_chunk = "")
 {
+    if ($starter === null)
+        $starter = weighted();
     if ($sequences > 0) {
         return $starter . $recreation_chunk . generate($sequences - 1, suggest_node($starter, $weighted), $weighted, $recreation_chunk);
     }
     return "";
 }
 
-function suggest_node($starter, $weighted = false)
+function suggest_node($starter, $weighted = true)
 {
     global $nodes;
     $suggestions = array();
@@ -16,7 +18,7 @@ function suggest_node($starter, $weighted = false)
         if ($node->v === $starter) {
             foreach ($node->l as $link) {
                 if ($weighted) {
-                    for ($t=0;$t<$link->s;$t++){
+                    for ($t = 0; $t < $link->s; $t++) {
                         array_push($suggestions, $link->v);
                     }
                 } else {
@@ -25,7 +27,7 @@ function suggest_node($starter, $weighted = false)
             }
         }
     }
-    if (sizeof($suggestions) > 0) {
+    if (!empty($suggestions)) {
         shuffle($suggestions);
         return $suggestions[0];
     }

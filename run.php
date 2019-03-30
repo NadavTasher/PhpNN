@@ -2,11 +2,11 @@
 include "phpnn/phpnn.php";
 //ini_set('memory_limit', '1024M');
 load("words");
-shoves("examples/beatles");
+//shoves("examples/training1");
 //shove("examples/training2/1.txt");
-//chunk(" ");
+//chunk("\n| ");
 //train(200, true);
-//save("words");
+//save("php_trained");
 
 echo "\nResult:\n\n";
-echo generate(100, frequent()->v, true, " ");
+echo generate(100,weighted(),true," ");

@@ -24,13 +24,6 @@ function chunk($variable)
     $chunk = $variable;
 }
 
-function frequent()
-{
-    global $nodes;
-    sort_nodes();
-    return $nodes[0];
-}
-
 function load($name)
 {
     global $nodes;
