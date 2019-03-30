@@ -18,10 +18,10 @@ function shoves($directory)
     }
 }
 
-function chunk($length)
+function chunk($variable)
 {
-    global $chunkLength;
-    $chunkLength = $length;
+    global $chunk;
+    $chunk = $variable;
 }
 
 function frequent()

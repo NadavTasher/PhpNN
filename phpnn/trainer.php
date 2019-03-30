@@ -1,6 +1,6 @@
 <?php
 
-$chunkLength = 1;
+$chunk = 1;
 
 function add_node($node)
 {
@@ -103,17 +103,20 @@ function scan_recursively($content)
 
 function scan($content)
 {
-    global $chunkLength;
+    global $chunk;
+    $chunks = array();
+    if (is_string($chunk)) {
+        $chunks = preg_split("/$chunk/", $content);
+    } else if (is_numeric($chunk)) {
+        $chunks = explode($chunk, $content);
+    }
+
     $previous = "";
-    while ($chunkLength < strlen($content)) {
-        if (strlen($content) > 0) {
-            $current = substr($content, 0, $chunkLength);
-            add_node($current);
-            if (!empty($previous))
-                add_link($previous, $current);
-            $previous = $current;
-            $content = substr($content, $chunkLength);
-        }
+    foreach ($chunks as $current) {
+        add_node($current);
+        if (!empty($previous))
+            add_link($previous, $current);
+        $previous = $current;
     }
 }
 
