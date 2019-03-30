@@ -21,7 +21,7 @@ function suggest_node($starter, $strengthCare = false)
                         $suggestions = array();
                         $strongest = $link->s;
                     }
-                    if ($link->strength === $strongest) {
+                    if ($link->s === $strongest) {
                         array_push($suggestions, $link->v);
                     }
                 } else {
