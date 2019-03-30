@@ -10,22 +10,22 @@ function generate($sequences = 20, $starter = "", $strengthCare = false)
 
 function suggest_node($starter, $strengthCare = false)
 {
-    global $dataset;
+    global $nodes;
     $suggestions = array();
-    foreach ($dataset->nodes as $node) {
-        if ($node->value === $starter) {
+    foreach ($nodes as $node) {
+        if ($node->v === $starter) {
             $strongest = 0;
-            foreach ($node->links as $link) {
+            foreach ($node->l as $link) {
                 if ($strengthCare) {
-                    if ($link->strength > $strongest) {
+                    if ($link->s > $strongest) {
                         $suggestions = array();
-                        $strongest = $link->strength;
+                        $strongest = $link->s;
                     }
                     if ($link->strength === $strongest) {
-                        array_push($suggestions, $link->value);
+                        array_push($suggestions, $link->v);
                     }
                 } else {
-                    array_push($suggestions, $link->value);
+                    array_push($suggestions, $link->v);
                 }
             }
         }

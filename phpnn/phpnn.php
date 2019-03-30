@@ -3,13 +3,7 @@ include "trainer.php";
 include "generator.php";
 
 $files = array();
-$dataset = new stdClass();
-$dataset->nodes = array();
-
-function nodes(){
-    global $dataset;
-    return $dataset->nodes;
-}
+$nodes = array();
 
 function shove($file)
 {
@@ -30,22 +24,30 @@ function chunk($length)
     $chunkLength = $length;
 }
 
-function load($name)
+function frequent()
 {
-    global $dataset;
-    if (file_exists(dataset($name)))
-        $dataset = json_decode(file_get_contents(dataset($name)));
+    global $nodes;
+    sort_nodes();
+    return $nodes[0];
 }
 
-function frequent(){
-    sort_nodes();
-    return nodes()[0];
+function load($name)
+{
+    global $nodes;
+    if (file_exists(dataset($name)))
+        $nodes = json_decode(file_get_contents(dataset($name)));
+    if ($nodes === null) {
+        $nodes = array();
+        echo "Dataset loading failed\n";
+    }
 }
+
+function json_array_encode(){}
 
 function save($name)
 {
-    global $dataset;
-    file_put_contents(dataset($name), json_encode($dataset));
+    global $nodes;
+    file_put_contents(dataset($name), json_encode($nodes));
 }
 
 function dataset($name)

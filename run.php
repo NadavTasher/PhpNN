@@ -1,11 +1,12 @@
 <?php
 include "phpnn/phpnn.php";
-load("lyrics");
-shoves("examples/training2");
+ini_set('memory_limit','1024M');
+load("lyrics2");
+shoves("examples/training4");
 //shove("examples/training2/1.txt");
 chunk(3);
-train(10, true);
-save("lyrics");
+//train(200, true);
+//save("lyrics2");
 
 echo "\nResult:\n\n";
-echo generate(100, frequent()->value, false);
+echo generate(100, frequent()->v, false);
