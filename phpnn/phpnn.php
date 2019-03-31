@@ -2,13 +2,13 @@
 include "trainer.php";
 include "generator.php";
 
-$files = array();
+$inputs = array();
 $nodes = new stdClass();
 
 function shove($file)
 {
-    global $files;
-    array_push($files, $file);
+    global $inputs;
+    array_push($inputs, file_get_contents($file));
 }
 
 function shoves($directory)
@@ -17,6 +17,17 @@ function shoves($directory)
         if (!empty($file) && $file[0] !== '.')
             shove($directory . DIRECTORY_SEPARATOR . $file);
     }
+}
+
+function feed($input)
+{
+    global $inputs;
+    array_push($inputs, $input);
+}
+
+function feeds($array)
+{
+    foreach ($array as $input) feed($input);
 }
 
 function chunk($variable)

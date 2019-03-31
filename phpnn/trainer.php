@@ -96,17 +96,17 @@ function scan($content)
 
 function train($seconds, $output = false)
 {
-    global $files;
+    global $inputs;
     if ($output)
         echo "Starting Training, Length: " . ($seconds) . "s\n";
 
     $end_time = time() + $seconds;
-    $fileIndex = 0;
-    while (time() < $end_time && $fileIndex < sizeof($files)) {
-        $content = filter(file_get_contents($files[$fileIndex]));
+    $inputIndex = 0;
+    while (time() < $end_time && $inputIndex < sizeof($inputs)) {
+        $content = filter($inputs[$inputIndex]);
         scan($content);
-        $fileIndex++;
+        $inputIndex++;
     }
     if ($output)
-        echo "Finished Training, Delay: " . (time() - $end_time) . "s, Trained " . ($fileIndex) . "\n";
+        echo "Finished Training, Delay: " . (time() - $end_time) . "s, Trained " . ($inputIndex) . "\n";
 }

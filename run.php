@@ -4,10 +4,10 @@ include "phpnn/phpnn.php";
 //load("words");
 shoves("examples/php");
 ////shove("examples/training2/1.txt");
-chunk(1);
+chunk(" ");
 train(10, true);
 //save("words2");
 
 echo "\nResult:\n\n";
 //echo weighted();
-echo generate(100, ORIGINATED);
+echo generate(100, ORIGINATED, null, " ");
