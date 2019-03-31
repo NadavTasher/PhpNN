@@ -7,8 +7,7 @@ $nodes = new stdClass();
 
 function shove($file)
 {
-    global $inputs;
-    array_push($inputs, file_get_contents($file));
+    feed(file_get_contents($file));
 }
 
 function shoves($directory)
