@@ -14,7 +14,8 @@ function shove($file)
 function shoves($directory)
 {
     foreach (scandir($directory) as $file) {
-        shove($directory . DIRECTORY_SEPARATOR . $file);
+        if (!empty($file) && $file[0] !== '.')
+            shove($directory . DIRECTORY_SEPARATOR . $file);
     }
 }
 

@@ -3,10 +3,11 @@
 const WEIGHTED = 1 << 0;
 const ORIGINATED = 1 << 1;
 
-function generate($sequences = 20, $mask = WEIGHTED | ORIGINATED, $previous = "", $recreation_chunk = "")
+function generate($sequences = 20, $mask = WEIGHTED | ORIGINATED, $previous = null, $recreation_chunk = null)
 {
+    if ($previous === null) $previous = weighted();
     if ($sequences > 0) {
-        return $previous . $recreation_chunk . generate($sequences - 1, $mask, suggest_node($previous, $mask), $recreation_chunk);
+        return $previous . (($recreation_chunk !== null) ? $recreation_chunk : "") . generate($sequences - 1, $mask, suggest_node($previous, $mask), $recreation_chunk);
     }
     return "";
 }

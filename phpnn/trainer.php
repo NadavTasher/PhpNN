@@ -108,5 +108,5 @@ function train($seconds, $output = false)
         $fileIndex++;
     }
     if ($output)
-        echo "Finished Training, Delay: " . (time() - $end_time) . "s, Trained " . ($fileIndex + 1) . "\n";
+        echo "Finished Training, Delay: " . (time() - $end_time) . "s, Trained " . ($fileIndex) . "\n";
 }
