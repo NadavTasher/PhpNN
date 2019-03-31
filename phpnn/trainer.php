@@ -17,20 +17,39 @@ function add_node($node)
     }
 }
 
-function add_link($node, $link)
+function add_origin($node, $link)
 {
     global $nodes;
     foreach ($nodes as $n) {
         if ($n->v === $node) {
             $found = false;
-            foreach ($n->l as $l) {
-                if ($l->v === $link) {
-                    $l->s++;
+            foreach ($n->o as $o) {
+                if ($o->v === $link) {
+                    $o->s++;
                     $found = true;
                 }
             }
             if (!$found) {
-                array_push($n->l, create_link($link));
+                array_push($n->o, create_link($link));
+            }
+        }
+    }
+}
+
+function add_destination($node, $link)
+{
+    global $nodes;
+    foreach ($nodes as $n) {
+        if ($n->v === $node) {
+            $found = false;
+            foreach ($n->d as $d) {
+                if ($d->v === $link) {
+                    $d->s++;
+                    $found = true;
+                }
+            }
+            if (!$found) {
+                array_push($n->d, create_link($link));
             }
         }
     }
@@ -41,7 +60,8 @@ function create_node($value)
     $node = new stdClass();
     $node->v = $value;
     $node->f = 1;
-    $node->l = array();
+    $node->o = array();
+    $node->d = array();
     return $node;
 }
 
@@ -108,20 +128,6 @@ function sort_nodes()
     if ($modifications != 0) sort_nodes();
 }
 
-function scan_recursively($content)
-{
-    global $chunkLength;
-    if (strlen($content) > 0) {
-        $current = substr($content, 0, $chunkLength);
-        add_node($current);
-        $next = scan_recursively(substr($content, $chunkLength));
-        if (!empty($next))
-            add_link($current, $next);
-        return $current;
-    }
-    return "";
-}
-
 function scan($content)
 {
     global $chunk;
@@ -137,7 +143,8 @@ function scan($content)
     foreach ($chunks as $current) {
         if (!empty($current)) {
             add_node($current);
-            add_link($previous, $current);
+            add_destination($previous, $current);
+            add_origin($current, $previous);
             $previous = $current;
         }
     }
