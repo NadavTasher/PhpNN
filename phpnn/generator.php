@@ -1,36 +1,52 @@
 <?php
 
-function generate($sequences = 20, $weighted = true, $starter = "", $recreation_chunk = "")
+const WEIGHTED = 1 << 0;
+const ORIGINATED = 1 << 1;
+
+function generate($sequences = 20, $mask = WEIGHTED | ORIGINATED, $previous = "", $recreation_chunk = "")
 {
     if ($sequences > 0) {
-        return $starter . $recreation_chunk . generate($sequences - 1, $weighted, suggest_node($starter, $weighted), $recreation_chunk);
+        return $previous . $recreation_chunk . generate($sequences - 1, $mask, suggest_node($previous, $mask), $recreation_chunk);
     }
     return "";
 }
 
-function suggest_node($starter, $weighted = true, $origin = true)
+function suggest_node($previous, $mask)
 {
     global $nodes;
-    $suggestions = array();
-    foreach ($nodes as $node) {
-        if ($node->v === $starter) {
-            foreach ($node->d as $link) {
-                if($origin){
-
+    if (isset($nodes->$previous)) {
+        $suggestions = array();
+        if ($mask & ORIGINATED) {
+            foreach ($nodes->$previous->d as $d => $destination) {
+                if (isset($nodes->$d)) {
+                    $total = 0;
+                    foreach ($nodes->$d->o as $no => $next_origin) {
+                        foreach ($nodes->$previous->o as $o => $origin) {
+                            if ($no === $o) {
+                                $total += $next_origin->s + $origin->s;
+                            }
+                        }
+                    }
+                    for ($s = 0; $s < $total; $s++) array_push($suggestions, $d);
                 }
-                if ($weighted) {
-                    for ($t = 0; $t < $link->s; $t++) {
-                        array_push($suggestions, $link->v);
+
+            }
+        }
+        if (empty($suggestions)) {
+            foreach ($nodes->$previous->d as $d => $destination) {
+                if ($mask & WEIGHTED) {
+                    for ($t = 0; $t < $destination->s; $t++) {
+                        array_push($suggestions, $d);
                     }
                 } else {
-                    array_push($suggestions, $link->v);
+                    array_push($suggestions, $d);
                 }
             }
         }
-    }
-    if (!empty($suggestions)) {
-        shuffle($suggestions);
-        return $suggestions[0];
+        if (!empty($suggestions)) {
+            shuffle($suggestions);
+            return $suggestions[0];
+        }
     }
     return "";
 }

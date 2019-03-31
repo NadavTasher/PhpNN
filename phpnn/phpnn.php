@@ -3,7 +3,7 @@ include "trainer.php";
 include "generator.php";
 
 $files = array();
-$nodes = array();
+$nodes = new stdClass();
 
 function shove($file)
 {

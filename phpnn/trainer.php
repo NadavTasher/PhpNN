@@ -5,70 +5,45 @@ $chunk = 1;
 function add_node($node)
 {
     global $nodes;
-    $found = false;
-    foreach ($nodes as $n) {
-        if ($n->v === $node) {
-            $n->f++;
-            $found = true;
-        }
-    }
-    if (!$found) {
-        array_push($nodes, create_node($node));
+    if (!isset($nodes->$node)) {
+        $nodes->$node = create_node();
+    } else {
+        $nodes->$node->f++;
     }
 }
 
 function add_origin($node, $link)
 {
     global $nodes;
-    foreach ($nodes as $n) {
-        if ($n->v === $node) {
-            $found = false;
-            foreach ($n->o as $o) {
-                if ($o->v === $link) {
-                    $o->s++;
-                    $found = true;
-                }
-            }
-            if (!$found) {
-                array_push($n->o, create_link($link));
-            }
-        }
+    if (!isset($nodes->$node->o->$link)) {
+        $nodes->$node->o->$link = create_link();
+    } else {
+        $nodes->$node->o->$link->s++;
     }
 }
 
 function add_destination($node, $link)
 {
     global $nodes;
-    foreach ($nodes as $n) {
-        if ($n->v === $node) {
-            $found = false;
-            foreach ($n->d as $d) {
-                if ($d->v === $link) {
-                    $d->s++;
-                    $found = true;
-                }
-            }
-            if (!$found) {
-                array_push($n->d, create_link($link));
-            }
-        }
+    if (!isset($nodes->$node->d->$link)) {
+        $nodes->$node->d->$link = create_link();
+    } else {
+        $nodes->$node->d->$link->s++;
     }
 }
 
-function create_node($value)
+function create_node()
 {
     $node = new stdClass();
-    $node->v = $value;
     $node->f = 1;
-    $node->o = array();
-    $node->d = array();
+    $node->o = new stdClass();
+    $node->d = new stdClass();
     return $node;
 }
 
-function create_link($next)
+function create_link()
 {
     $link = new stdClass();
-    $link->v = $next;
     $link->s = 1;
     return $link;
 }
@@ -82,50 +57,18 @@ function filter($input)
     return $rebuilt;
 }
 
-function frequent()
-{
-    global $nodes;
-    sort_nodes();
-    return $nodes[0]->v;
-}
-
 function weighted()
 {
     global $nodes;
     $array = array();
-    foreach ($nodes as $node) {
-        for ($f = 0; $f < $node->f; $f++) array_push($array, $node->v);
+    foreach ($nodes as $key => $node) {
+        for ($f = 0; $f < $node->f; $f++) array_push($array, $key);
     }
     if (!empty($array)) {
         shuffle($array);
         return $array[0];
     }
     return "";
-}
-
-function reset_frequency()
-{
-    global $nodes;
-    foreach ($nodes as $node) {
-        $node->f = 0;
-    }
-}
-
-function sort_nodes()
-{
-    global $nodes;
-    $modifications = 0;
-    for ($n = 1; $n < sizeof($nodes); $n++) {
-        $previous = $nodes[$n - 1];
-        $current = $nodes[$n];
-        if ($current->f > $previous->f) {
-            $temporary = $previous;
-            $nodes[$n - 1] = $current;
-            $nodes[$n] = $temporary;
-            $modifications++;
-        }
-    }
-    if ($modifications != 0) sort_nodes();
 }
 
 function scan($content)
@@ -139,12 +82,13 @@ function scan($content)
     }
 
     $previous = "";
-    add_node($previous);
     foreach ($chunks as $current) {
         if (!empty($current)) {
             add_node($current);
-            add_destination($previous, $current);
-            add_origin($current, $previous);
+            if (!empty($previous)) {
+                add_destination($previous, $current);
+                add_origin($current, $previous);
+            }
             $previous = $current;
         }
     }
@@ -162,7 +106,6 @@ function train($seconds, $output = false)
         $content = filter(file_get_contents($files[$fileIndex]));
         scan($content);
         $fileIndex++;
-        sort_nodes();
     }
     if ($output)
         echo "Finished Training, Delay: " . (time() - $end_time) . "s, Trained " . ($fileIndex + 1) . "\n";
