@@ -7,12 +7,12 @@ function generate($sequences = 20, $mask = WEIGHTED | ORIGINATED, $previous = nu
 {
     if ($previous === null) $previous = weighted();
     if ($sequences > 0) {
-        return $previous . (($recreation_chunk !== null) ? $recreation_chunk : "") . generate($sequences - 1, $mask, next($previous, $mask), $recreation_chunk);
+        return $previous . (($recreation_chunk !== null) ? $recreation_chunk : "") . generate($sequences - 1, $mask, next_node($previous, $mask), $recreation_chunk);
     }
     return "";
 }
 
-function next($previous, $mask)
+function next_node($previous, $mask)
 {
     global $nodes;
     if (isset($nodes->$previous)) {
@@ -24,11 +24,11 @@ function next($previous, $mask)
                     foreach ($nodes->$d->o as $no => $next_origin) {
                         foreach ($nodes->$previous->o as $o => $origin) {
                             if ($no === $o) {
-                                $total += $next_origin->s + $origin->s;
+                                $total += $next_origin->w + $origin->w;
                             }
                         }
                     }
-                    for ($s = 0; $s < $total; $s++) array_push($suggestions, $d);
+                    for ($w = 0; $w < $total; $w++) array_push($suggestions, $d);
                 }
 
             }
@@ -36,7 +36,7 @@ function next($previous, $mask)
         if (empty($suggestions)) {
             foreach ($nodes->$previous->d as $d => $destination) {
                 if ($mask & WEIGHTED) {
-                    for ($t = 0; $t < $destination->s; $t++) {
+                    for ($t = 0; $t < $destination->w; $t++) {
                         array_push($suggestions, $d);
                     }
                 } else {

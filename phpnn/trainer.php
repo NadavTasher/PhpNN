@@ -18,7 +18,7 @@ function add_origin($node, $link)
     if (!isset($nodes->$node->o->$link)) {
         $nodes->$node->o->$link = create_link();
     } else {
-        $nodes->$node->o->$link->s++;
+        $nodes->$node->o->$link->w++;
     }
 }
 
@@ -28,7 +28,7 @@ function add_destination($node, $link)
     if (!isset($nodes->$node->d->$link)) {
         $nodes->$node->d->$link = create_link();
     } else {
-        $nodes->$node->d->$link->s++;
+        $nodes->$node->d->$link->w++;
     }
 }
 
@@ -44,7 +44,7 @@ function create_node()
 function create_link()
 {
     $link = new stdClass();
-    $link->s = 1;
+    $link->w = 1;
     return $link;
 }
 
