@@ -7,12 +7,12 @@ function generate($sequences = 20, $mask = WEIGHTED | ORIGINATED, $previous = nu
 {
     if ($previous === null) $previous = weighted();
     if ($sequences > 0) {
-        return $previous . (($recreation_chunk !== null) ? $recreation_chunk : "") . generate($sequences - 1, $mask, suggest_node($previous, $mask), $recreation_chunk);
+        return $previous . (($recreation_chunk !== null) ? $recreation_chunk : "") . generate($sequences - 1, $mask, next($previous, $mask), $recreation_chunk);
     }
     return "";
 }
 
-function suggest_node($previous, $mask)
+function next($previous, $mask)
 {
     global $nodes;
     if (isset($nodes->$previous)) {
