@@ -5,9 +5,8 @@ include "api/api.php";
 shoves("examples/beatles");
 ////shove("examples/training2/1.txt");
 chunk(" ");
-//for ($a = 0; $a < 1000; $a++)
-    train(10, true);
-//save("words3");
+for ($a = 0; $a < 10; $a++) train(0, true);
+save("beatles");
 
 echo "\nResult:\n\n";
 //echo weighted();

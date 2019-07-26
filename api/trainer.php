@@ -94,7 +94,7 @@ function scan($content)
     }
 }
 
-function train($seconds, $output = false)
+function train($seconds = 0, $output = false)
 {
     global $inputs;
     if ($output)
@@ -102,11 +102,10 @@ function train($seconds, $output = false)
 
     $end_time = time() + $seconds;
     $inputIndex = 0;
-    while (time() < $end_time && $inputIndex < sizeof($inputs)) {
-        $content = filter($inputs[$inputIndex]);
-        scan($content);
-        $inputIndex++;
+    for ($inputIndex = 0; $inputIndex < count($inputs) && (time() < $end_time || $seconds === 0); $inputIndex++) {
+        scan(filter($inputs[$inputIndex]));
     }
+
     if ($output)
         echo "Finished Training, Delay: " . (time() - $end_time) . "s, Trained " . ($inputIndex) . "\n";
 }
