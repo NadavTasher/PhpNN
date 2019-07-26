@@ -1,6 +1,6 @@
 <?php
 include "trainer.php";
-include "generator.php";
+include "composer.php";
 
 $inputs = array();
 $nodes = new stdClass();

@@ -1,5 +1,5 @@
 <?php
-include "phpnn/phpnn.php";
+include "api/api.php";
 //ini_set('memory_limit', '1024M');
 //load("words3");
 shoves("examples/beatles");

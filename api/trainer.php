@@ -8,43 +8,43 @@ function add_node($node)
     if (!isset($nodes->$node)) {
         $nodes->$node = create_node();
     } else {
-        $nodes->$node->f++;
+        $nodes->$node->frequency++;
     }
 }
 
 function add_origin($node, $link)
 {
     global $nodes;
-    if (!isset($nodes->$node->o->$link)) {
-        $nodes->$node->o->$link = create_link();
+    if (!isset($nodes->$node->origin->$link)) {
+        $nodes->$node->origin->$link = create_link();
     } else {
-        $nodes->$node->o->$link->w++;
+        $nodes->$node->origin->$link->weight++;
     }
 }
 
 function add_destination($node, $link)
 {
     global $nodes;
-    if (!isset($nodes->$node->d->$link)) {
-        $nodes->$node->d->$link = create_link();
+    if (!isset($nodes->$node->destination->$link)) {
+        $nodes->$node->destination->$link = create_link();
     } else {
-        $nodes->$node->d->$link->w++;
+        $nodes->$node->destination->$link->weight++;
     }
 }
 
 function create_node()
 {
     $node = new stdClass();
-    $node->f = 1;
-    $node->o = new stdClass();
-    $node->d = new stdClass();
+    $node->frequency = 1;
+    $node->origin = new stdClass();
+    $node->destination = new stdClass();
     return $node;
 }
 
 function create_link()
 {
     $link = new stdClass();
-    $link->w = 1;
+    $link->weight = 1;
     return $link;
 }
 
@@ -62,7 +62,7 @@ function weighted()
     global $nodes;
     $array = array();
     foreach ($nodes as $key => $node) {
-        for ($f = 0; $f < $node->f; $f++) array_push($array, $key);
+        for ($f = 0; $f < $node->frequency; $f++) array_push($array, $key);
     }
     if (!empty($array)) {
         shuffle($array);
